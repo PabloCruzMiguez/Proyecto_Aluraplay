@@ -10,6 +10,42 @@
     display: none;
 }
 
+/*haciendo mobile first*/
+/*Menú lateral*/
+.menu__container{
+    position: fixed; /*hacemos que la posicion del menu sea fija*/
+    bottom: 0%; /*como trabajamos primero trabajamos con mobile, el menu se ubica abajo*/
+    height: 75px; /*reducimos la altura al 75%*/
+    width: 100%; /*hacemos que el ancho del menu ocupe el 100%*/
+}
+
+/*Los elementos dentro del menu lateral*/
+.menu__lista{
+    display: flex;
+    justify-content: space-around; /*asignando espacio entre los elementos de la lista(menu)*/
+    height: 100%;
+}
+
+/*vamos a trabajar con los alineamientos de los elementos dentro de los li*/
+.menu__lista li{
+    align-self: center;
+}
+
+/*poniendo a los iconos arriba de los titulos*/
+.menu__itens{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/*revisar esta parte, no la entendi bien :v (aula 3 video 2)*/
+.menu__lista:nth-child(2),
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;
+}
+
+
 /*Sección Superior*/ 
 /*es la barra donde están los tipos de videos*/
 .superior__seccion__container{
