@@ -10,10 +10,18 @@
     display: none;
 }
 
-/*Sección Superior*/
+/*Sección Superior*/ 
+/*es la barra donde están los tipos de videos*/
 .superior__seccion__container{
     display: flex;
     align-items: center;
+    white-space: nowrap;
+    overflow: scroll; /*para agregarle un scroll (la barrita para mover)*/
+    gap: 15px; /*asignando espacio entre los elementos*/
+    /*Comentario:*/
+    /*Es posible aplicar espaciado entre elementos con una propiedad de Flexbox llamada gap,
+     pero para agruparlos aprovechando todo el ancho del contenedor en el que están insertados,
+      la mejor opción es la propiedad justify-content*/
 }
 
 .rodapie__container{
