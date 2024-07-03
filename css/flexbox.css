@@ -1,4 +1,5 @@
-.cabecera__container{
+/*Cabecera*/
+.cabecera__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,33 +7,38 @@
     top: 0;
 }
 
-.cabecera__buscar__item{
+.cabecera__buscar__item {
     display: none;
 }
 
 /*haciendo mobile first*/
 /*Menú lateral*/
-.menu__container{
-    position: fixed; /*hacemos que la posicion del menu sea fija*/
-    bottom: 0%; /*como trabajamos primero trabajamos con mobile, el menu se ubica abajo*/
-    height: 75px; /*reducimos la altura al 75%*/
-    width: 100%; /*hacemos que el ancho del menu ocupe el 100%*/
+.menu__container {
+    position: fixed;
+    /*hacemos que la posicion del menu sea fija*/
+    bottom: 0%;
+    /*como trabajamos primero trabajamos con mobile, el menu se ubica abajo*/
+    height: 75px;
+    /*reducimos la altura al 75%*/
+    width: 100%;
+    /*hacemos que el ancho del menu ocupe el 100%*/
 }
 
 /*Los elementos dentro del menu lateral*/
-.menu__lista{
+.menu__lista {
     display: flex;
-    justify-content: space-around; /*asignando espacio entre los elementos de la lista(menu)*/
+    justify-content: space-around;
+    /*asignando espacio entre los elementos de la lista(menu)*/
     height: 100%;
 }
 
 /*vamos a trabajar con los alineamientos de los elementos dentro de los li*/
-.menu__lista li{
+.menu__lista li {
     align-self: center;
 }
 
 /*poniendo a los iconos arriba de los titulos*/
-.menu__itens{
+.menu__itens {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -41,40 +47,107 @@
 /*revisar esta parte, no la entendi bien :v (aula 3 video 2)*/
 .menu__lista:nth-child(2),
 .menu__lista:nth-child(3),
-.menu__lista:nth-child(4){
+.menu__lista:nth-child(4) {
     display: none;
 }
 
 
-/*Sección Superior*/ 
+/*Sección Superior*/
 /*es la barra donde están los tipos de videos*/
-.superior__seccion__container{
+.superior__seccion__container {
     display: flex;
     align-items: center;
     white-space: nowrap;
-    overflow: scroll; /*para agregarle un scroll (la barrita para mover)*/
-    gap: 15px; /*asignando espacio entre los elementos*/
+    overflow: scroll;
+    /*para agregarle un scroll (la barrita para mover)*/
+    gap: 15px;
+    /*asignando espacio entre los elementos*/
     /*Comentario:*/
     /*Es posible aplicar espaciado entre elementos con una propiedad de Flexbox llamada gap,
      pero para agruparlos aprovechando todo el ancho del contenedor en el que están insertados,
       la mejor opción es la propiedad justify-content*/
 }
 
-.rodapie__container{
-    /*display: flex;
-    flex-direction: column;
+.rodapie__container {
+    display: flex;
+    /*flex-direction: column;
     flex-wrap: wrap;*/
     flex-flow: column wrap;
 }
 
-@media (min-width: 834px){
+
+/*Para Tablets*/
+@media (min-width: 834px) {
+
     /*Cabecera*/
-    .cabecera__buscar__item{
+    .cabecera__buscar__item {
         display: block;
     }
 
+    /*Agregando lo que sale en el aula 4 actividad 2
+que nunca dijeron que agreguemos pero que ya estaba en el video*/
+    .menu__container {
+        left: 0;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 15px;
+        gap: 33px;
+    }
+
+    /*fin de lo que no dijeron que agregremos*/
+
     /*Rodapie*/
-    .rodapie__container{
+    .rodapie__container {
         justify-content: space-between;
+    }
+}
+
+/*Para computadoras de escritorio*/
+/*1440px es el ancho por defecto para computadoras de escritorio*/
+@media(min-width:1440px ) {
+    .menu__container {
+        width: 239px;
+        overflow: scroll;
+    }
+
+    .menu__lista:nth-child(2),
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex;
+    }
+
+    .menu__lista{
+        height: auto;
+        padding: 20px 17px 20px 15px;
+        gap: 15px; /*reduciendo el espcio entre uno y otro es decir, entre el que esta arriba y el que esta abajo*/
+    }
+
+    .menu__lista:nth-child(3){
+        flex-direction: column-reverse;
+    }
+
+    /*Poniendo el nombre al lado de los iconos en el menu lateral*/
+    .menu__itens{
+        flex-direction: row;
+        gap: 15px;
+        align-items: center; /*centrando el texto en relaciona a la alura del icono*/
+    }
+
+    .videojuegos{
+        order: 3;
+    }
+
+    .peliculas{
+        order:2;
+    }
+
+    .premium{
+        order: 1;
     }
 }
